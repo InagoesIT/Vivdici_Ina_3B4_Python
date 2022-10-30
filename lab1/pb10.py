@@ -13,4 +13,4 @@ def get_nr_of_words(characters):
 
     return nr_of_words
 
-print(get_nr_of_words("heaaaa a d d         g      aa"))
+print(get_nr_of_words("heaaaa a d d G    AA"))

@@ -10,4 +10,5 @@ def convert_upper_camel_into_snake(characters):
 
     return result
 
+
 print(convert_upper_camel_into_snake("HelloCamelCaseHHHH"))
