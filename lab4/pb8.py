@@ -1,3 +1,8 @@
+# Să se scrie o funcție ce primește un parametru cu numele dir_path. Acest parametru
+# reprezintă calea către un director aflat pe disc. Funcția va returna o listă cu toate căile absolute
+# ale fișierelor aflate în rădăcina directorului dir_path.
+# Exemplu apel funcție: functie("C:\\director") va returna ["C:\\director\\fisier1.txt", "C:\\director\\fisier2.txt"]
+
 import os
 import sys
 
@@ -9,7 +14,7 @@ def get_files_from_directory(dir_path) -> list:
 
 
 def main():
-    dir_path = "/mnt/uni/COURSES/PYTHON/lab"
+    dir_path = "/mnt/uni/COURSES/PYTHON/lab/lab1"
     try:
         dir_items = get_files_from_directory(dir_path)
         print(f"All the files from the directory = {dir_path} are:")

@@ -1,1 +1,2 @@
+/mnt/uni/COURSES/PYTHON/lab/lab4/Ablabla.txt
 /mnt/uni/COURSES/PYTHON/lab/lab4/Atest.txt

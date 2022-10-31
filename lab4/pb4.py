@@ -1,4 +1,9 @@
+# Să se scrie o funcție ce returnează o listă cu extensiile unice a fișierelor din directorul
+# dat ca argument la linia de comandă (nerecursiv). Lista trebuie să fie sortată crescător.
+# Mențiune: extensia fișierului ‘fisier.txt’ este ‘txt’, iar ‘fisier’ nu are extensie, deci nu va apărea în lista finală.
+
 import os
+
 import sys
 
 
@@ -13,8 +18,9 @@ def get_extensions_from_dir_with_args():
 
 def main():
     try:
+        extensions = get_extensions_from_dir_with_args()
         print(f"The file extensions from the directory with the path --{sys.argv[1]}-- are:")
-        print(get_extensions_from_dir_with_args())
+        print(extensions)
         return 0
     except FileNotFoundError:
         print(f"!!! There is no such directory with the path: --{sys.argv[1]}-- !!!")
