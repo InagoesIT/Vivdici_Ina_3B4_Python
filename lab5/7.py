@@ -21,3 +21,13 @@
 # Valid numbers are: 2, 8, 34, 144, 610, 2584, 10946, 832040
 # After offset: 34, 144, 610, 2584, 10946, 832040
 # After limit: 34, 144
+
+
+def get_fibonacci_sequence(size=1000):
+    result = [0, 1]
+    for i in range(size - 2):
+        result.append(result[i - 1] + result[i - 2])
+    return result
+
+def process(filters, limit=-1, offset=0):
+    pass
