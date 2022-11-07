@@ -10,6 +10,7 @@ def main():
     while True:
         x = input("Please give a number => ")
         if x == "q":
+            print("~~~~~~~~~Bye!~~~~~~~~~")
             return
         x = int(x)
         print(f"The output for process_item({x}) = {process_item(x)}")

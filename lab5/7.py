@@ -29,22 +29,22 @@ def sum_digits(x):
 
 def get_fibonacci_sequence(size=1000):
     result = [0, 1]
-    for i in range(2, size - 2):
+    for i in range(2, size):
         result.append(result[i - 1] + result[i - 2])
     return result
 
 
-def process(**keywords_args):
+def process(**keyword_args):
     fibonacci_sequence = get_fibonacci_sequence()
 
-    if "filters" in keywords_args.keys():
-        for filter_lambda in keywords_args["filters"]:
+    if "filters" in keyword_args.keys():
+        for filter_lambda in keyword_args["filters"]:
             fibonacci_sequence = list(filter(filter_lambda, fibonacci_sequence))
 
-    if "offset" in keywords_args.keys():
-        fibonacci_sequence = fibonacci_sequence[keywords_args["offset"]:]
-    if "limit" in keywords_args.keys():
-        fibonacci_sequence = fibonacci_sequence[0:keywords_args["limit"]]
+    if "offset" in keyword_args.keys():
+        fibonacci_sequence = fibonacci_sequence[keyword_args["offset"]:]
+    if "limit" in keyword_args.keys():
+        fibonacci_sequence = fibonacci_sequence[0:keyword_args["limit"]]
 
     return fibonacci_sequence
 

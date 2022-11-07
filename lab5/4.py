@@ -14,14 +14,21 @@
 # ) will return: [{'abc': 4, 'def': 5}, {1: 1, 'test': True}]
 
 
-def get_dicts_with_conditions(*args, **dictionaries):
-    result_dictionaries = []
-    bag_of_arguments = [args, dictionaries.values()]
+def has_str_key_min_3_chars(keys):
+    return any([True if type(key) == str and len(key) > 2 else False for key in keys])
 
-    for args_arr in bag_of_arguments:
-        for arg in args_arr:
-            if type(arg) == dict and len(arg.keys()) >= 2 and \
-                    any([True if type(key) == str and len(key) > 2 else False for key in arg.keys()]):
+
+def condition_is_met(arg):
+    return type(arg) == dict and len(arg.keys()) >= 2 and has_str_key_min_3_chars(arg.keys())
+
+
+def get_dicts_with_conditions(*args, **keyword_args):
+    result_dictionaries = []
+    bag_of_arguments = [args, keyword_args.values()]
+
+    for args_list in bag_of_arguments:
+        for arg in args_list:
+            if condition_is_met(arg):
                 result_dictionaries.append(arg)
     return result_dictionaries
 

@@ -3,7 +3,7 @@
 # Example: my_function([1, "2", {"3": "a"}, {4, 5}, 5, 6, 3.0]) will return [1, 5, 6, 3.0]
 
 def get_numbers(input_list):
-    return list(filter(lambda x: type(x) == int or type(x) == float, input_list))
+    return list(filter(lambda item: type(item) == int or type(item) == float, input_list))
 
 
 if __name__ == '__main__':

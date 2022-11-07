@@ -4,8 +4,12 @@
 # For the call my_function(1, 2, c=3, d=4) the returned value will be 7.
 
 
-anonymous_function: () = lambda *args, **dictionary: sum(dictionary.values())
+anonymous_function: () = lambda *args, **keyword_args: sum(keyword_args.values())
 
 
-def my_function(*args, **dictionary):
-    return sum(dictionary.values())
+def my_function(*args, **keyword_args):
+    return sum(keyword_args.values())
+
+
+if __name__ == '__main__':
+    print(my_function(1, 2, c=3, d=4))
