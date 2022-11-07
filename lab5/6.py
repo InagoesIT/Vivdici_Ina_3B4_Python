@@ -19,4 +19,5 @@ def get_even_odd_pairs(numbers):
 
 
 if __name__ == '__main__':
-    print(get_even_odd_pairs([1, 3, 5, 2, 8, 7, 4, 10, 9, 2]))
+    get_even_odd_pairs([1, 3, 5, 2, 8, 7, 4, 10, 9, 2])
+    # print(get_even_odd_pairs([1, 3, 5, 2, 8, 7, 4, 10, 9, 2]))

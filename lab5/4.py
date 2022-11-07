@@ -22,9 +22,9 @@ def condition_is_met(arg):
     return type(arg) == dict and len(arg.keys()) >= 2 and has_str_key_min_3_chars(arg.keys())
 
 
-def get_dicts_with_conditions(*args, **keyword_args):
+def get_dicts_with_conditions(*args, **kwargs):
     result_dictionaries = []
-    bag_of_arguments = [args, keyword_args.values()]
+    bag_of_arguments = [args, kwargs.values()]
 
     for args_list in bag_of_arguments:
         for arg in args_list:
@@ -34,11 +34,19 @@ def get_dicts_with_conditions(*args, **keyword_args):
 
 
 if __name__ == '__main__':
-    print(get_dicts_with_conditions({1: 2, 3: 4, 5: 6},
-                                    {'a': 5, 'b': 7, 'c': 'e'},
-                                    {2: 3},
-                                    [1, 2, 3],
-                                    {'abc': 4, 'def': 5},
-                                    3764,
-                                    dictionar={'ab': 4, 'ac': 'abcde', 'fg': 'abc'},
-                                    test={1: 1, 'test': True}))
+    get_dicts_with_conditions({1: 2, 3: 4, 5: 6},
+                              {'a': 5, 'b': 7, 'c': 'e'},
+                              {2: 3},
+                              [1, 2, 3],
+                              {'abc': 4, 'def': 5},
+                              3764,
+                              dictionar={'ab': 4, 'ac': 'abcde', 'fg': 'abc'},
+                              test={1: 1, 'test': True})
+    # print(get_dicts_with_conditions({1: 2, 3: 4, 5: 6},
+    #                                 {'a': 5, 'b': 7, 'c': 'e'},
+    #                                 {2: 3},
+    #                                 [1, 2, 3],
+    #                                 {'abc': 4, 'def': 5},
+    #                                 3764,
+    #                                 dictionar={'ab': 4, 'ac': 'abcde', 'fg': 'abc'},
+    #                                 test={1: 1, 'test': True}))

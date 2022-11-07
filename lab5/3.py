@@ -20,8 +20,8 @@ if __name__ == "__main__":
     result_vowels_1 = vowels_1(sentence)
     result_vowels_2 = vowels_2(sentence)
     result_vowels_3 = vowels_3(sentence)
-    if result_vowels_1.__eq__(result_vowels_2) and result_vowels_1.__eq__(result_vowels_3) \
-            and result_vowels_2.__eq__(result_vowels_3):
-        print(vowels_3(sentence))
-    else:
-        print("oops...")
+    # if result_vowels_1.__eq__(result_vowels_2) and result_vowels_1.__eq__(result_vowels_3) \
+    #         and result_vowels_2.__eq__(result_vowels_3):
+    #     print(vowels_3(sentence))
+    # else:
+    #     print("oops...")

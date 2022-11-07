@@ -34,22 +34,25 @@ def get_fibonacci_sequence(size=1000):
     return result
 
 
-def process(**keyword_args):
+def process(**kwargs):
     fibonacci_sequence = get_fibonacci_sequence()
 
-    if "filters" in keyword_args.keys():
-        for filter_lambda in keyword_args["filters"]:
+    if "filters" in kwargs.keys():
+        for filter_lambda in kwargs["filters"]:
             fibonacci_sequence = list(filter(filter_lambda, fibonacci_sequence))
 
-    if "offset" in keyword_args.keys():
-        fibonacci_sequence = fibonacci_sequence[keyword_args["offset"]:]
-    if "limit" in keyword_args.keys():
-        fibonacci_sequence = fibonacci_sequence[0:keyword_args["limit"]]
+    if "offset" in kwargs.keys():
+        fibonacci_sequence = fibonacci_sequence[kwargs["offset"]:]
+    if "limit" in kwargs.keys():
+        fibonacci_sequence = fibonacci_sequence[0:kwargs["limit"]]
 
     return fibonacci_sequence
 
 
 if __name__ == '__main__':
-    print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20],
-                  limit=2,
-                  offset=2))
+    process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20],
+            limit=2,
+            offset=2)
+    # print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20],
+    #               limit=2,
+    #               offset=2))

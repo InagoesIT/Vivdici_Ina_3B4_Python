@@ -7,4 +7,5 @@ def get_numbers(input_list):
 
 
 if __name__ == '__main__':
-    print(get_numbers([1, "2", {"3": "a"}, {4, 5}, 5, 6, 3.0]))
+    get_numbers([1, "2", {"3": "a"}, {4, 5}, 5, 6, 3.0])
+    # print(get_numbers([1, "2", {"3": "a"}, {4, 5}, 5, 6, 3.0]))
