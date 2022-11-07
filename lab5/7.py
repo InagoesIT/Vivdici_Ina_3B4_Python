@@ -23,11 +23,30 @@
 # After limit: 34, 144
 
 
+def sum_digits(x):
+    return sum(map(int, str(x)))
+
+
 def get_fibonacci_sequence(size=1000):
     result = [0, 1]
-    for i in range(size - 2):
+    for i in range(2, size - 2):
         result.append(result[i - 1] + result[i - 2])
     return result
 
+
 def process(filters, limit=-1, offset=0):
-    pass
+    fibonacci_sequence = get_fibonacci_sequence()
+    for filter_lambda in filters:
+        fibonacci_sequence = list(filter(filter_lambda, fibonacci_sequence))
+
+    fibonacci_sequence = fibonacci_sequence[offset:]
+    if limit != -1:
+        fibonacci_sequence = fibonacci_sequence[0:limit]
+
+    return fibonacci_sequence
+
+
+if __name__ == '__main__':
+    print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20],
+                  limit=2,
+                  offset=2))
