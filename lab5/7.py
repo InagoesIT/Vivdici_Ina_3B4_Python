@@ -34,14 +34,17 @@ def get_fibonacci_sequence(size=1000):
     return result
 
 
-def process(filters, limit=-1, offset=0):
+def process(**keywords_args):
     fibonacci_sequence = get_fibonacci_sequence()
-    for filter_lambda in filters:
-        fibonacci_sequence = list(filter(filter_lambda, fibonacci_sequence))
 
-    fibonacci_sequence = fibonacci_sequence[offset:]
-    if limit != -1:
-        fibonacci_sequence = fibonacci_sequence[0:limit]
+    if "filters" in keywords_args.keys():
+        for filter_lambda in keywords_args["filters"]:
+            fibonacci_sequence = list(filter(filter_lambda, fibonacci_sequence))
+
+    if "offset" in keywords_args.keys():
+        fibonacci_sequence = fibonacci_sequence[keywords_args["offset"]:]
+    if "limit" in keywords_args.keys():
+        fibonacci_sequence = fibonacci_sequence[0:keywords_args["limit"]]
 
     return fibonacci_sequence
 
