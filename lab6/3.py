@@ -9,4 +9,4 @@ def get_matched_strings(text: str, regexes: list[str]) -> list:
 
 
 if __name__ == '__main__':
-    print(get_matched_strings("call me: 0732342", [r"\d+", r"\s"]))
+    print(get_matched_strings("call me: 0732342", [r"\d+", r"\w{4}"]))

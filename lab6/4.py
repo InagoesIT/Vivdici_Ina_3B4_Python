@@ -39,7 +39,7 @@ def get_elements_with_attrs(xml_path: str, attrs: dict) -> list:
     while i < lines_nr:
         line = lines[i]
         for attr_expression in attr_expressions:
-            if attr_expression.match(line) is None:
+            if attr_expression.search(line) is None:
                 break
         else:
             tag_name = tag_name_expr.search(line).group("tag_name")

@@ -5,7 +5,7 @@ import re
 
 
 def get_words(text: str) -> list:
-    return re.findall(r"(?!_)\w+", text)
+    return re.findall(r"[0-9A-Z]+", text, flags=re.IGNORECASE)
 
 
 if __name__ == '__main__':

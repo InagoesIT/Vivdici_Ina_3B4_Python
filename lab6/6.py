@@ -13,7 +13,7 @@ def get_censored_word(word: str) -> str:
 
 
 def get_censored_text(text: str) -> str:
-    return re.sub(r"(\b[aeiou][a-z]+[aeiou])",
+    return re.sub(r"(\b[aeiou][a-z]*[aeiou])",
                   lambda intermediary_result: get_censored_word(intermediary_result.group()), text)
 
 
