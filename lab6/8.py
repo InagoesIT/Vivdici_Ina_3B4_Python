@@ -11,7 +11,9 @@ def file_content_matches(file_path, compiled_expr):
         file = open(file_path)
         for line in file.readlines():
             if compiled_expr.search(line):
+                file.close()
                 return True
+        file.close()
         return False
     except IOError:
         return False
