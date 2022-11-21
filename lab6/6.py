@@ -5,16 +5,10 @@
 import re
 
 
-def get_censored_word(word: str) -> str:
-    word_list = list(word)
-    for i in range(1, len(word), 2):
-        word_list[i] = '*'
-    return "".join(word_list)
-
-
 def get_censored_text(text: str) -> str:
     return re.sub(r"(\b[aeiou][a-z]*[aeiou])",
-                  lambda intermediary_result: get_censored_word(intermediary_result.group()), text)
+                  lambda intermediary_result: re.sub(r"([a-z])[a-z]", r"\1*", intermediary_result.group(),
+                                                     flags=re.IGNORECASE), text)
 
 
 if __name__ == '__main__':

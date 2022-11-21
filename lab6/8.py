@@ -11,6 +11,7 @@ def file_content_matches(file_path, compiled_expr):
         file = open(file_path)
         for line in file.readlines():
             if compiled_expr.search(line):
+                print("---- matched line: "+line)
                 file.close()
                 return True
         file.close()
@@ -42,4 +43,6 @@ def display_files_that_have(dir_path, expr):
 
 
 if __name__ == '__main__':
-    display_files_that_have("../lab6", "8")
+    word_with_3vowels = r"(\w*[aeiou]{3}\w*)"
+    variable_assignation = r'[a-zA-Z]\w*\s*=\s*(([a-zA-Z]\w*)|(\d)|("\w*"))'
+    display_files_that_have("../lab6", variable_assignation)
